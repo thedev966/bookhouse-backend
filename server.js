@@ -47,7 +47,7 @@ app.use(cookieParser());
 server.applyMiddleware({
   app,
   path: "/api",
-  cors: { origin: "http://localhost:3000", credentials: true },
+  cors: { origin: process.env.CLIENT_URI, credentials: true },
 });
 
 const PORT = process.env.PORT || 8080;
