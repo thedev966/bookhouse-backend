@@ -90,7 +90,7 @@ class Users extends MongoDataSource {
           maxAge: 3 * 24 * 60 * 60 * 1000,
           httpOnly: true,
           secure: true,
-          sameSite: "lax",
+          sameSite: "none",
         });
 
         res.set("Authorization", "bearer " + access_token);
