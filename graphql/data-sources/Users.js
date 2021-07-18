@@ -87,10 +87,10 @@ class Users extends MongoDataSource {
         // send refresh token cookie and authorization header
         res.cookie("jwt", refresh_token, {
           path: "/",
-          maxAge: 4 * 60 * 60 * 1000,
+          maxAge: 3 * 24 * 60 * 60 * 1000,
           httpOnly: true,
           secure: true,
-          sameSite: "none",
+          sameSite: "lax",
         });
 
         res.set("Authorization", "bearer " + access_token);
