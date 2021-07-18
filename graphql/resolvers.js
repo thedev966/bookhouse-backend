@@ -23,7 +23,7 @@ const resolvers = {
       return dataSources.books.fetchSingleBook(bookID);
     },
     heroBooks: async (_, __, { dataSources }) => {
-      return dataSources.books.fetchHeroBooks();
+      return await dataSources.books.fetchHeroBooks();
     },
     orderDetails: async (_, args, context) => {
       return await context.dataSources.books.fetchOrderDetails(args, context);

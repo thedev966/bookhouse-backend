@@ -36,12 +36,13 @@ class Books extends MongoDataSource {
 
   async fetchHeroBooks() {
     try {
-      const books = await Book.find({}).limit(4);
+      const books = await Book.find().sort({ _id: -1 }).limit(4);
       return {
         success: true,
         heroBooks: books,
       };
     } catch (err) {
+      console.log(err);
       return {
         success: false,
         heroBooks: [],
