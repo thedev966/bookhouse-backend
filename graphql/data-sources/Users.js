@@ -168,7 +168,7 @@ class Users extends MongoDataSource {
   // logout functionality
   async logoutUser(res) {
     res.clearCookie("jwt");
-    return { message: "You have logged out!" };
+    return { success: true, message: "You have logged out!" };
   }
 }
 

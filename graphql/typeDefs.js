@@ -101,6 +101,11 @@ const typeDefs = gql`
     message: String!
   }
 
+  type LogoutResponse {
+    success: Boolean!
+    message: String!
+  }
+
   "Input types"
   input RegisterInput {
     email: String!
@@ -135,7 +140,7 @@ const typeDefs = gql`
   type Query {
     demo: String!
     refreshToken: RefreshResponse!
-    logOutUser: String!
+    logOutUser: LogoutResponse!
     featuredBooks(catName: String!): FeaturedBooksReponse!
     singleBook(bookID: ID!): SingleBookResponse!
     heroBooks: HeroBooksResponse!
