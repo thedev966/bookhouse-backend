@@ -31,6 +31,9 @@ const resolvers = {
     allOrders: async (_, args, context) => {
       return await context.dataSources.orders.fetchAllOrders(args);
     },
+    searchBooks: async (_, args, context) => {
+      return await context.dataSources.books.searchBooks(args);
+    },
   },
 
   /* Mutation resolvers */

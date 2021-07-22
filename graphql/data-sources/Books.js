@@ -129,6 +129,18 @@ class Books extends MongoDataSource {
       };
     }
   }
+
+  async searchBooks({ query }) {
+    try {
+      const books = await Book.find({
+        title: { $regex: query, $options: "i" },
+      });
+      return { success: true, books };
+    } catch (err) {
+      console.log(err.message);
+      return { success: false, books: [] };
+    }
+  }
 }
 
 module.exports = Books;

@@ -106,6 +106,11 @@ const typeDefs = gql`
     message: String!
   }
 
+  type SearchBooksResponse {
+    success: Boolean!
+    books: [Book!]
+  }
+
   "Input types"
   input RegisterInput {
     email: String!
@@ -146,6 +151,7 @@ const typeDefs = gql`
     heroBooks: HeroBooksResponse!
     orderDetails(orderDetailsInput: OrderDetailsInput): OrderDetailsResponse!
     allOrders(userID: String!): AllOrdersResponse!
+    searchBooks(query: String!): SearchBooksResponse!
   }
 
   "Mutation type endpoints"
